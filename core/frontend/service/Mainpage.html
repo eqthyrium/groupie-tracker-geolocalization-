@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<style>
+    
+    
+    .Heading {
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        
+    }
+
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content; /* Keeps the container size based on content */
+        margin: 0 auto; /* Centers the container horizontally */
+    }
+
+    .button-container button {
+       margin: 5px; /* Adjust spacing between buttons as needed */
+    }
+
+
+</style>
+
+<html>
+    <body>
+
+        <h1 class = "Heading">Groupie Tracker</h1>
+
+
+             
+            
+        <div class="button-container">
+
+            <form method="GET" action="/account" >
+
+                
+                {{range $i,$image := .ImageValue1}}
+                <button class= "generate" type="submit" name = "Image_Index_Value" value = "{{$i}}">  
+                    <img  src=  {{$image}}   >  
+                </button>      
+                {{end}} 
+
+
+
+            </form>
+
+
+
+        </div>
+
+    
+
+
+
+    </body>
+
+</html>
