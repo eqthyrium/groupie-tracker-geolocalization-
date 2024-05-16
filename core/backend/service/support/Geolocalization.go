@@ -1,15 +1,14 @@
 package support
 
 import (
+	"Adlet/core/backend/container"
+	"Adlet/core/backend/errorness"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"net/http/httptest"
-
-	"Adlet/core/backend/container"
-	"Adlet/core/backend/errorness"
 )
 
 // const apikey = "831cb471-5969-49ce-bf40-76aefe8f3cad"
@@ -44,7 +43,7 @@ func Geolocalization() error {
 	CleanString()
 	response := httptest.NewRecorder()
 
-	fileName := "/home/student/Golang/Project/Geolocalization/core/backend/container/LocationCoordinate.json"
+	fileName := "../core/backend/container/LocationCoordinate.json"
 
 	result, err := ioutil.ReadFile(fileName)
 	if err != nil {
