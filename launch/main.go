@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -10,7 +11,10 @@ import (
 
 func main() {
 	support.Jsonhandler()
-	support.Geolocalization()
+	if err := support.Geolocalization(); err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	http.HandleFunc("/", backend.MainPageHandler)
 	http.HandleFunc("/account", backend.AccountPageHandler)
